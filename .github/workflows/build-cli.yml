@@ -36,6 +36,10 @@ jobs:
       - name: Build
         run: dub build -b release-debug --compiler=ldc2 --arch ${{ matrix.triple }} :cli-frontend --force
 
+      - name: Setup tmate session if failed
+        if: ${{ failure() }}
+        uses: mxschmitt/action-tmate@v3
+
       - name: Move files around for artifcation
         uses: ./.github/actions/rename-files
         with:
