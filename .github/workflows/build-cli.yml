@@ -49,7 +49,7 @@ jobs:
         uses: ./.github/actions/write-version-file
 
       - name: Build
-        run:  DFLAGS="-gcc=$ANDROID_NDK/toolchains/llvm/prebuilt/linux-x86_64/bin/aarch64-linux-android29-clang -linker=$ANDROID_NDK/toolchains/llvm/prebuilt/linux-x86_64/bin/aarch64-linux-android29-ld -linker-flags=-fuse-ld=lld" dub build -b release-debug --compiler=ldc2 --arch ${{ matrix.triple }} :cli-frontend
+        run:  DFLAGS="-gcc=$ANDROID_NDK/toolchains/llvm/prebuilt/linux-x86_64/bin/aarch64-linux-android29-clang -linker=lld" dub build -b release-debug --compiler=ldc2 --arch ${{ matrix.triple }} :cli-frontend
 
       - name: Move files around for artifcation
         uses: ./.github/actions/rename-files
