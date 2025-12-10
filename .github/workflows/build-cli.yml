@@ -34,7 +34,7 @@ jobs:
         uses: ./.github/actions/write-version-file
 
       - name: Build
-        run: dub build -b release-debug --compiler=ldc2 --arch ${{ matrix.triple }} :cli-frontend
+        run: dub build -b release-debug --compiler=ldc2 --arch ${{ matrix.triple }} :cli-frontend --force
 
       - name: Move files around for artifcation
         uses: ./.github/actions/rename-files
