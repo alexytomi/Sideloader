@@ -17,6 +17,9 @@ jobs:
           - triple: 'aarch64-linux-gnu'
             target: 'linux'
 
+          - triple: 'aarch64-linux-android'
+            target: 'linux'
+
           - triple: 'x86_64-windows-msvc'
             target: 'windows'
 
