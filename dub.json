@@ -22,8 +22,8 @@
             "version": "6fdaa60d62bbf7c55044069e8f03cbe74401c444"
         },
         "provision": {
-            "repository": "git+https://github.com/Dadoum/Provision.git",
-            "version": "645d56d8e8c86c057893321843db00b21f1aaeb2"
+            "repository": "git+https://github.com/alexytomi/Provision.git",
+            "version": "0d5775df99f5af90dc1d5b366036d6131b58ed30"
         },
         "requests": "~>2.1",
         "slf4d": "~>2"

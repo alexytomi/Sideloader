@@ -94,6 +94,9 @@ string readPasswordLine(string prompt) {
     version (Windows) {
         write(prompt.toStringz(), " [/!\\ The password will appear in clear text in the terminal]: ");
         return readln().chomp();
+    } else version (Android){
+        write(prompt.toStringz(), " [/!\\ The password will appear in clear text in the terminal]: ");
+        return readln().chomp();
     } else {
         return fromStringz(cast(immutable) getpass(prompt.toStringz()));
     }
