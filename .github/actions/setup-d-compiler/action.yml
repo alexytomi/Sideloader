@@ -17,6 +17,10 @@ runs:
       name: "Set-up AArch64-linux cross-compiler."
       uses: ./.github/actions/target-aarch64-linux-gnu
 
+    - if: inputs.target-triple == 'aarch64-linux-android'
+      name: "Set-up AArch64-android cross-compiler."
+      uses: ./.github/actions/target-aarch64-linux-android
+
     - if: inputs.target-triple == 'arm64-apple-macos'
       name: "Set-up ARM64-macOS cross-compiler."
       uses: ./.github/actions/target-arm64-apple-macos
