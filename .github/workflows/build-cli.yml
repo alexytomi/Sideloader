@@ -34,7 +34,10 @@ jobs:
         uses: ./.github/actions/write-version-file
 
       - name: Build
-        run: dub -v build -v -b release-debug --compiler=ldc2 --arch ${{ matrix.triple }} :cli-frontend --force
+        run: |
+          export DFLAGS="-gcc=$ANDROID_NDK/toolchains/llvm/prebuilt/linux-x86_64/bin/aarch64-linux-android29-clang -L --Tdata=0x403"
+          export PATH="$ANDROID_NDK/toolchains/llvm/prebuilt/linux-x86_64/bin:$PATH"
+          dub -v build -v -b release-debug --compiler=ldc2 --arch ${{ matrix.triple }} :cli-frontend
 
       - name: Setup tmate session if failed
         if: ${{ failure() }}
