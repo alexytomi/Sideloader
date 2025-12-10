@@ -15,6 +15,7 @@ runs:
             switches = [
                 "-defaultlib=phobos2-ldc,druntime-ldc",
                 "-gcc=$ANDROID_NDK/toolchains/llvm/prebuilt/linux-x86_64/bin/aarch64-linux-android29-clang",
+                "-linker=$ANDROID_NDK/toolchains/llvm/prebuilt/linux-x86_64/bin/aarch64-linux-android29-ld",
             ];
             post-switches = [
                 "-I$HOME/ldc2-$LDC_VERSION-android-aarch64/import",
