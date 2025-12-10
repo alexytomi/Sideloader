@@ -34,7 +34,7 @@ jobs:
         uses: ./.github/actions/write-version-file
 
       - name: Build
-        run: dub build -b release-debug --compiler=ldc2 --arch ${{ matrix.triple }} :cli-frontend --force
+        run: dub -v build -v -b release-debug --compiler=ldc2 --arch ${{ matrix.triple }} :cli-frontend --force
 
       - name: Setup tmate session if failed
         if: ${{ failure() }}
