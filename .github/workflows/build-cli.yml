@@ -35,10 +35,10 @@ jobs:
 
       - name: Build
         run: |
-          export DFLAGS="-gcc=$ANDROID_NDK/toolchains/llvm/prebuilt/linux-x86_64/bin/aarch64-linux-android29-clang"
+          export DFLAGS="-gcc=$ANDROID_NDK/toolchains/llvm/prebuilt/linux-x86_64/bin/aarch64-linux-android30-clang"
           export PATH="$ANDROID_NDK/toolchains/llvm/prebuilt/linux-x86_64/bin:$PATH"
           dub -v build -v -b release-debug --compiler=ldc2 --arch ${{ matrix.triple }} :cli-frontend || true
-          export DFLAGS="-gcc=$ANDROID_NDK/toolchains/llvm/prebuilt/linux-x86_64/bin/aarch64-linux-android29-clang"
+          export DFLAGS="-gcc=$ANDROID_NDK/toolchains/llvm/prebuilt/linux-x86_64/bin/aarch64-linux-android30-clang"
           dub -v build -v -b release-debug --compiler=ldc2 --arch ${{ matrix.triple }} :cli-frontend
 
 

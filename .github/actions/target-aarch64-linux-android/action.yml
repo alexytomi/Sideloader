@@ -9,7 +9,7 @@ runs:
       run: |
         mkdir -p $HOME/.ldc/
         LDC_VERSION="1.41.0"
-        export DFLAGS="-gcc=$ANDROID_NDK/toolchains/llvm/prebuilt/linux-x86_64/bin/aarch64-linux-android29-clang"
+        export DFLAGS="-gcc=$ANDROID_NDK/toolchains/llvm/prebuilt/linux-x86_64/bin/aarch64-linux-android30-clang"
         export PATH="$ANDROID_NDK/toolchains/llvm/prebuilt/linux-x86_64/bin:$PATH"
         cat << EOF | tee $HOME/.ldc/ldc2.conf
         "aarch64-.*-linux-android":
