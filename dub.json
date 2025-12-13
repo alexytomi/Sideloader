@@ -4,6 +4,7 @@
     "authors": [
         "Dadoum"
     ],
+    "dflags": ["-preview=shortenedMethods"],
 
     "targetType": "staticLibrary",
     "stringImportPaths": ["resources/"],
