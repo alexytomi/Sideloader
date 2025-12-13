@@ -16,7 +16,7 @@ runs:
         {
             switches = [
                 "-defaultlib=phobos2-ldc,druntime-ldc",
-                "-gcc=$ANDROID_NDK/toolchains/llvm/prebuilt/linux-x86_64/bin/aarch64-linux-android29-clang",
+                "-gcc=$ANDROID_NDK/toolchains/llvm/prebuilt/linux-x86_64/bin/aarch64-linux-android30-clang",
                 "-linker=lld",
                 "-L --Tdata=0x403",
             ];
@@ -26,6 +26,7 @@ runs:
             lib-dirs = [
                 "$HOME/ldc2-$LDC_VERSION-android-aarch64/lib",
             ];
+            rpath = "$HOME/ldc2-$LDC_VERSION-android-aarch64/lib";
         };
         EOF
         curl -LO https://github.com/ldc-developers/ldc/releases/download/v$LDC_VERSION/ldc2-$LDC_VERSION-android-aarch64.tar.xz
