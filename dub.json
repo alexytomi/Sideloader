@@ -12,7 +12,7 @@
     "buildRequirements": ["allowWarnings", "requireBoundsCheck"],
 
     "dependencies": {
-        "botan": "1.13.7",
+        "botan": "~>1.13.7",
         "dynamic-loader": {
             "repository": "git+https://github.com/Dadoum/dynamicloader.git",
             "version": "9202b389affa6be0740e7295dea8f0146537a784"
