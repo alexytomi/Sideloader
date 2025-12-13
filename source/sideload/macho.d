@@ -532,16 +532,18 @@ class CodeDirectoryBlob: Blob {
         import std.string;
         import std.stdio;
         string s = cast(string) data[codeDirectory.identOffset..codeDirectory.identOffset + 5];
-        return new CodeDirectoryBlob(
-            hash: null,
-            bundleIdentifier: (cast(immutable(char)*) (data.ptr + codeDirectory.identOffset)).fromStringz(),
-            teamIdentifier: (cast(immutable(char)*) (data.ptr + codeDirectory.teamOffset)).fromStringz(),
-            machO: null,
-            entitlements: null,
-            infoPlist: null,
-            codeResources: null,
-            isAlternate: false,
+        CodeDirectoryBlob blob = new CodeDirectoryBlob(
+           null,
+          (cast(immutable(char)*) (data.ptr + codeDirectory.identOffset)).fromStringz(),
+          (cast(immutable(char)*) (data.ptr + codeDirectory.teamOffset)).fromStringz(),
+           null,
+           null,
+           null,
+           null,
+           false,
         );
+
+        return blob;
     }
 
     ubyte[] encode(ubyte[][] previousEncodedBlobs) {
